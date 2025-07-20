@@ -1,9 +1,9 @@
 FROM ricwang/docker-wechat:base
     
 # 下载微信安装包
-RUN curl -O "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.deb" && \
-    dpkg -i WeChatLinux_x86_64.deb 2>&1 | tee /tmp/wechat_install.log && \
-    rm WeChatLinux_x86_64.deb
+RUN curl -O "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_arm64.deb" && \
+    dpkg -i WeChatLinux_arm64.deb 2>&1 | tee /tmp/wechat_install.log && \
+    rm WeChatLinux_arm64.deb
 
 RUN echo '#!/bin/sh' > /startapp.sh && \
     echo 'exec /usr/bin/wechat' >> /startapp.sh && \
